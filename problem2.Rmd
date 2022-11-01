@@ -1,0 +1,58 @@
+---
+title: "problem2"
+author: "Ayako Sekiya"
+date: "2022-10-25"
+output: html_document
+---
+
+```{r libraries}
+library(tidyverse)
+library(p8105.datasets)
+
+library(plotly)
+```
+
+```{r import}
+data(ny_noaa)
+
+ny_noaa=ny_noaa
+```
+
+```{r tidy}
+ny_noaa <- ny_noaa %>% 
+  janitor::clean_names() %>%
+  separate(date, into=c("year", "month", "day"), sep= "-") %>% 
+  mutate(tmax = as.numeric(tmax)/10,
+         tmin = as.numeric(tmin)/10,
+        prcp = as.numeric(prcp)/10) %>% 
+  drop_na()
+```
+
+
+```{r scatterplot}
+scatter_ggplot = 
+  nyc_airbnb %>%
+  ggplot(aes(x = lat, y = long, color = price)) +
+  geom_point(alpha = 0.25) +
+  coord_cartesian()
+
+ggplotly(scatter_ggplot)
+```
+
+```{r boxplot}
+box_ggplot = 
+  nyc_airbnb %>% 
+  mutate(neighbourhood = fct_reorder(neighbourhood, price)) %>% 
+  ggplot(aes(x = neighbourhood, y = price, fill = neighbourhood)) +
+  geom_boxplot() +
+  theme(axis.text.x = element_text(angle = 90, hjust = 1))
+
+ggplotly(box_ggplot)
+```
+
+```{r bar chart}
+nyc_airbnb %>% 
+  count(neighbourhood) %>% 
+  mutate(neighbourhood = fct_reorder(neighbourhood, n)) %>% 
+  plot_ly(x = ~neighbourhood, y = ~n, color = ~neighbourhood, type = "bar", colors = "viridis")
+```

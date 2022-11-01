@@ -9,6 +9,8 @@ navbar:
       href: mailto:<as6445@cumc.columbia.edu>
     - icon: fa-github fa-lg
       href: http://github.com/as6445/
+    - icon: fa-brands fa-linkedin
+      href: https://www.linkedin.com/in/ayako-s-908316157/ 
 output:
   html_document:
     theme: flatly

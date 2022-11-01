@@ -1,9 +1,9 @@
 ---
 title: "Resume"
-author: "Ayako Sekiya"
-date: "2022-10-25"
 output: html_document
 ---
+# Ayako Sekiya 
+New York, NY | as6445@cumc.columbia.edu | https://www.linkedin.com/in/ayako-s-908316157/ 
 
 ## Education
 **Columbia University, Mailman School of Public Health**, New York, NY 	
@@ -20,6 +20,7 @@ Honors: Magna Cum Laude, Honors Humanities Program, Phi Alpha Epsilon Honorary S
 **Summer Research Intern**
 May 2022-August 2022
 National Institutes of Health (NIH), National Cancer Institute (NCI), Bethesda, MD
+
 *	Developed methods to understand age, period, and cohort effects of kidney cancer incidence in the United States to decipher recent changes in trends among different demographics with mentors. 
 *	Managed independent descriptive epidemiology analysis in SEER*Stat, JoinPoint Regression Program, and R to understand kidney cancer incidence among young adults. 
 *	Collaborated with biostatisticians to visualize trends in R and tested significance using statistical tests. 
@@ -28,6 +29,7 @@ National Institutes of Health (NIH), National Cancer Institute (NCI), Bethesda, 
 **Clinical Research Intern**
 May 2021-August 2021
 Multidisciplinary Association for Psychedelic Studies Public Beneficiary Corporation, San Jose, CA
+
 *	Analyzed two clinical trial data sets using SAS and presented findings to team to showcase treatment patterns and compare clinical outcomes between placebo and treatment groups.
 *	Inspected academic literature and clinical trial data on the usage of MDMA in psychotherapy among PTSD patients and summarized findings to aid in designing future clinical trials on psychotherapy. 
 *	Updated four clinical trial protocols by creating charts and trackers for data changes to increase efficiency and accuracy in the editing process and ensure compliance with NIH guidelines.
@@ -36,6 +38,7 @@ Multidisciplinary Association for Psychedelic Studies Public Beneficiary Corpora
 **Graduate Teaching Assistant** 	
 September 2022-Present
 Columbia University, Mailman School of Public Health, New York, NY
+
 *	Facilitate weekly lab sections for 20 students to further students’ understanding and mastery of Quantitative Foundations of the Research Methods and Applications studio and STATA.
 *	Collaborate with 25 TAs and 2 Professors to review and provide feedback on assignments in a timely manner.
 *	Oversaw weekly office hours to provide customized assistance to meet individual learning styles. 

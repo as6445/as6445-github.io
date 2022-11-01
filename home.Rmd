@@ -1,10 +1,10 @@
 ---
 title: "Home"
 author: "Ayako Sekiya"
-date: "2022-10-25"
+date: "2022-11-02"
 output: html_document
 ---
 
 # Welcome to my page!
 
-This page is created using R and will include my [resume](resume.html) as well as my contact information. 
+This page is created using R and will include my [resume](resume.html) as well as a [flexdashboard](flexdashboard.html). 
