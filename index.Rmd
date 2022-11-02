@@ -8,4 +8,11 @@ theme: cerulean
 
 # Welcome to my page!
 
-This page is created using R and will include my [resume](resume.html) as well as a [flexdashboard](plotly.html). 
+My name is Ayako. 
+
+<center>
+<img src="images/Screenshot_2.jpg" style="width:25%">
+</center>
+
+
+This page was created using R for P8105. This website includes my [Resume](resume.html) as well as my answers for [Problem 2](plotly.html). Please feel free to click the links or navigate through the pages through the tabs at the top. You will also be able to find my contact information there. 

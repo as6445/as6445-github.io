@@ -2,10 +2,10 @@
 title: "Resume"
 output: html_document
 ---
-# Ayako Sekiya 
+## Ayako Sekiya 
 New York, NY | as6445@cumc.columbia.edu | https://www.linkedin.com/in/ayako-s-908316157/ 
 
-## Education
+### Education
 **Columbia University, Mailman School of Public Health**, New York, NY 	
 Expected May 2023
 Master of Public Health, Epidemiology; Certificate: Applied Biostatistics and Public Health Data Science
@@ -16,7 +16,7 @@ August 2017-December 2020
 Bachelor of Science, Public Health Science; Sustainability Studies Minor
 Honors: Magna Cum Laude, Honors Humanities Program, Phi Alpha Epsilon Honorary Society
 
-## Research Experiences
+### Research Experiences
 **Summer Research Intern**
 May 2022-August 2022
 National Institutes of Health (NIH), National Cancer Institute (NCI), Bethesda, MD
@@ -34,7 +34,7 @@ Multidisciplinary Association for Psychedelic Studies Public Beneficiary Corpora
 *	Inspected academic literature and clinical trial data on the usage of MDMA in psychotherapy among PTSD patients and summarized findings to aid in designing future clinical trials on psychotherapy. 
 *	Updated four clinical trial protocols by creating charts and trackers for data changes to increase efficiency and accuracy in the editing process and ensure compliance with NIH guidelines.
 
-## Leadership Experience
+### Leadership Experience
 **Graduate Teaching Assistant** 	
 September 2022-Present
 Columbia University, Mailman School of Public Health, New York, NY
@@ -43,5 +43,5 @@ Columbia University, Mailman School of Public Health, New York, NY
 *	Collaborate with 25 TAs and 2 Professors to review and provide feedback on assignments in a timely manner.
 *	Oversaw weekly office hours to provide customized assistance to meet individual learning styles. 
 
-## Skills
+### Skills
 MS Office: Word, Excel, PowerPoint (Advanced); SAS (Advanced); R (Advanced); STATA (Intermediate)
