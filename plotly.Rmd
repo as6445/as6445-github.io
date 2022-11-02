@@ -24,40 +24,49 @@ ny_noaa=ny_noaa
 smaller_noaa <- ny_noaa %>% 
   janitor::clean_names() %>%
   separate(date, into=c("year", "month", "day"), sep= "-") %>%
-  filter(year>=2000 & year<=2005) %>% 
+  filter(year>=2000 & year<=2004) %>% 
   mutate(tmax = as.numeric(tmax)/10,
          tmin = as.numeric(tmin)/10,
         prcp = as.numeric(prcp)/10,
         snow_mm=snow, 
-        snow=round(snow_mm*0.03937*4)/4) %>% 
-  select(-snow)
+        month= as.numeric(month),
+        snwd=round(snow_mm*0.03937*4)/4) %>% 
+  mutate(month = month.name[month]) %>% 
+  drop_na(prcp, snow_mm, tmax, tmin) %>% 
+  select(-snwd)
 ```
 
 Column {data-width=650}
 -----------------------------------------------------------------------
 
-### Chart A
+### Boxplot of precipation (mm) in year 2000
 
 ```{r}
 smaller_noaa %>% 
-  plot_ly(x=~month, y = ~snow_mm, color = ~year, type = "box", colors = "viridis")
+  filter(year==2000) %>%
+  mutate(month = factor(month, levels=month.name)) %>%
+  plot_ly(y = ~prcp, color = ~month, type = "box", colors = "viridis")
 ```
 
 Column {data-width=350}
 -----------------------------------------------------------------------
-### Chart B
+### Barchart of mean minimum temperature (C) by month (2000-2004) 
 
 ```{r}
 smaller_noaa %>% 
-  plot_ly(x = ~year, y = ~snow_mm, color = ~year, type = "bar")
+  group_by(month) %>% 
+  summarize(mean_tmin= mean(tmin, na.rm= TRUE)) %>% 
+  drop_na(mean_tmin) %>% 
+  mutate(month = factor(month, levels=month.name)) %>%
+  plot_ly(x = ~month, y = ~mean_tmin, color = ~month, type = "bar", colors = "viridis")
 ```
 
-### Chart C
+### Scatterplot of maximum temperature (C) and snowfall (mm) by year(2000-2004)
 
 ```{r}
 smaller_noaa %>%
   plot_ly(
-    x = ~month, y = ~prcp, type = "scatter", mode = "markers", alpha = 0.5)
+    x = ~tmax, y = ~snow_mm, type = "scatter", mode = "markers", alpha = 0.5, color=~year)
 ```
 
 `rmarkdown::render("plotly.Rmd", output_format = "flexdashboard::flex_dashboard")`
