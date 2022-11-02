@@ -13,7 +13,7 @@ library(plotly)
 ```
 
 ```{r import}
-data(ny_noaa)
+data(instacart)
 
 ny_noaa=ny_noaa
 ```
@@ -33,32 +33,13 @@ ny_noaa <- ny_noaa %>%
 select(-snow)
 ```
 
-## Scatterplot
-
-I will first create a scatterplot for one of my plots for the flexdashboard. 
-
-```{r scatterplot}
-scatter_ggplot = 
-  ny_noaa %>%
-  ggplot(aes(x = year, y = tmin)) +
-  geom_point(alpha = 0.25) +
-  coord_cartesian()
-
-ggplotly(scatter_ggplot)
-```
-
 ## Boxplot
 
 I will create a boxplot for one of my plots for the flexdashboard. 
 
 ```{r boxplot}
-box_ggplot = 
-  ny_noaa %>% 
-  ggplot(aes(x = year, y = snow_mm, fill = year)) +
-  geom_boxplot() +
-  theme(axis.text.x = element_text(angle = 90, hjust = 1))
-
-ggplotly(box_ggplot)
+ny_noaa %>% 
+  plot_ly(x=~year, y = ~snow_mm, color = ~year, type = "box", colors = "viridis")
 ```
 
 ## Bar chart
@@ -66,10 +47,16 @@ ggplotly(box_ggplot)
 I will create a barchart for one of my plots for the flexdashboard. 
 
 ```{r bar chart}
-bar_ggplot = 
-  ny_noaa %>% 
-  ggplot(aes(x = year, y = snow_mm, fill = year)) +
-  theme(axis.text.x = element_text(angle = 90, hjust = 1))
+ny_noaa %>% 
+  plot_ly(x = ~year, y = ~snow_mm, color = ~year, type = "bar", colors = "viridis")
+```
 
-ggplotly(bar_ggplot)
+## Scatterplot
+
+I will first create a scatterplot for one of my plots for the flexdashboard. 
+
+```{r scatterplot}
+ny_noaa %>%
+  plot_ly(
+    x = ~year, y = ~tmin, type = "scatter", mode = "markers", alpha = 0.5)
 ```

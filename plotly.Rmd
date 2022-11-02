@@ -7,7 +7,32 @@ output:
 ---
 
 ```{r setup, include=FALSE}
+library(tidyverse)
+library(p8105.datasets)
+library(plotly)
 library(flexdashboard)
+```
+
+```{r import, include=FALSE}
+data(ny_noaa)
+
+ny_noaa=ny_noaa
+```
+
+I will first tidy the data set. It is important to standardize some of the values including, `snow`, `tmax`, `tmin`, and `prcp`. I am using `filter` to make my dataset smaller, so that the data can be more easily processed by my computer without crashing.
+
+```{r tidy, include=FALSE}
+ny_noaa <- ny_noaa %>% 
+  janitor::clean_names() %>%
+  separate(date, into=c("year", "month", "day"), sep= "-") %>%
+  mutate(tmax = as.numeric(tmax)/10,
+         tmin = as.numeric(tmin)/10,
+        prcp = as.numeric(prcp)/10,
+        snow_mm=snow, 
+        snow=round(snow_mm*0.03937*4)/4) %>% 
+  drop_na() %>% 
+  filter(year>2000 & year<2008) %>% 
+  select(-snow)
 ```
 
 Column {data-width=650}
@@ -16,7 +41,8 @@ Column {data-width=650}
 ### Chart A
 
 ```{r}
-
+ny_noaa %>% 
+  plot_ly(x=~year, y = ~snow_mm, color = ~year, type = "box", colors = "viridis")
 ```
 
 Column {data-width=350}
@@ -25,12 +51,15 @@ Column {data-width=350}
 ### Chart B
 
 ```{r}
-
+ny_noaa %>% 
+  plot_ly(x = ~year, y = ~snow_mm, color = ~year, type = "bar", colors = "viridis")
 ```
 
 ### Chart C
 
 ```{r}
-
+ny_noaa %>%
+  plot_ly(
+    x = ~year, y = ~tmin, type = "scatter", mode = "markers", alpha = 0.5)
 ```
 
