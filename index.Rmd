@@ -3,7 +3,7 @@ title: "Home"
 author: "Ayako Sekiya"
 date: "2022-11-02"
 output: html_document
-theme: flatly
+theme: cerulean
 ---
 
 # Welcome to my page!

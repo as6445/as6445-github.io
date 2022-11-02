@@ -15,4 +15,4 @@ navbar:
       href: https://www.linkedin.com/in/ayako-s-908316157/ 
 output:
   html_document:
-    theme: flatly
+    theme: cerulean
