@@ -1,0 +1,10 @@
+---
+title: "Home"
+author: "Ayako Sekiya"
+date: "2022-11-02"
+output: html_document
+---
+
+# Welcome to my page!
+
+This page is created using R and will include my [resume](resume.html) as well as a [flexdashboard](plotly.html). 
