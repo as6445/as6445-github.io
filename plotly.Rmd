@@ -39,7 +39,7 @@ smaller_noaa <- ny_noaa %>%
 Column {data-width=650}
 -----------------------------------------------------------------------
 
-### Boxplot of precipation (mm) in year 2000
+### Boxplot of precipitation (mm) in year 2000
 
 ```{r}
 smaller_noaa %>% 
